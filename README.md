@@ -30,6 +30,13 @@ The following example shows the container used for a deployment step which shows
           scannerMode: 'MSBuild'
           projectKey: 'my-project'
           projectName: 'MyProject'
+      - bash: |
+          dotnet build
+        displayName: "Build"
+        target: swissgrc/azure-pipelines-sonarscannermsbuild:latest
+      - task: SonarCloudAnalyze@1
+        displayName: 'Run SonarCloud analysis'
+        target: swissgrc/azure-pipelines-sonarscannermsbuild:latest
 ```
 
 ### Tags
