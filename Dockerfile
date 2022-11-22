@@ -32,7 +32,23 @@ RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.d
   # Smoke test
   git lfs version
 
+# Install NodeJS
+
+# renovate: datasource=github-tags depName=nodejs/node extractVersion=^v(?<version>.*)$
+ENV NODE_VERSION=16.18.1
+
 # Install .NET
+
+RUN apt-get update -y && \
+  # Add NodeJS PPA
+  curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+  # Install NodeJs
+  apt-get install -y --no-install-recommends nodejs=${NODE_VERSION}-deb-1nodesource1 && \
+  # Clean up
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* && \
+  # Smoke test
+  node -v
 
 # renovate: datasource=github-tags depName=dotnet/sdk extractVersion=^v(?<version>.*)$
 ENV DOTNET_VERSION=6.0.403
