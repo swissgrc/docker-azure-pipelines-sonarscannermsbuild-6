@@ -41,20 +41,21 @@ The following example shows the container used for a deployment step which shows
 
 ### Tags
 
-| Tag        | Description                                     | Base Image                                | .NET SDK | Git        | Git LFS | Size                                                                                                                                         |
-|------------|-------------------------------------------------|-------------------------------------------|----------|------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| latest     | Latest stable release (from `main` branch)      | swissgrc/azure-pipelines-openjdk:17.0.4.0 | 6.0.403  | 1:2.30.2-1 | 3.2.0   | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-sonarscannermsbuild/latest?style=flat-square)   |
-| unstable   | Latest unstable release (from `develop` branch) | swissgrc/azure-pipelines-openjdk:17.0.4.1 | 6.0.403  | 1:2.30.2-1 | 3.2.0   | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-sonarscannermsbuild/unstable?style=flat-square) |
+| Tag        | Description                                     | Base Image                                | .NET SDK | NodeJS  | Git        | Git LFS | Size                                                                                                                                         |
+|------------|-------------------------------------------------|-------------------------------------------|----------|---------|------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| latest     | Latest stable release (from `main` branch)      | swissgrc/azure-pipelines-openjdk:17.0.4.0 | 6.0.403  | 16.18.0 | 1:2.30.2-1 | 3.2.0   | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-sonarscannermsbuild/latest?style=flat-square)   |
+| unstable   | Latest unstable release (from `develop` branch) | swissgrc/azure-pipelines-openjdk:17.0.4.1 | 6.0.403  | 16.18.0 | 1:2.30.2-1 | 3.2.0   | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-sonarscannermsbuild/unstable?style=flat-square) |
 
 ### Configuration
 
 These environment variables are supported:
 
-| Environment variable   | Default value | Description                                 |
-|------------------------|---------------|---------------------------------------------|
-| DOTNET_VERSION         | `6.0.403`     | Version of .NET SDK installed in the image. |
-| GIT_VERSION            | `1:2.30.2-1`  | Version of Git installed in the image.      |
-| GITLFS_VERSION         | `3.2.0`       | Version of Git LFS installed in the image.  |
+| Environment variable   | Default value              | Description                                 |
+|------------------------|----------------------------|---------------------------------------------|
+| DOTNET_VERSION         | `6.0.403`                  | Version of .NET SDK installed in the image. |
+| NODE_VERSION           | `16.18.0-deb-1nodesource1` | Version of Node.js installed in the image.  |
+| GIT_VERSION            | `1:2.30.2-1`               | Version of Git installed in the image.      |
+| GITLFS_VERSION         | `3.2.0`                    | Version of Git LFS installed in the image.  |
 
 [Sonar Scanner for .NET]: https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-msbuild/
 [Azure Pipelines container jobs]: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases
