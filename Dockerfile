@@ -72,3 +72,13 @@ RUN curl -o /tmp/packages-microsoft-prod.deb https://packages.microsoft.com/conf
   rm -rf /var/lib/apt/lists/* && \
   # Smoke test
   dotnet --info
+
+# Install Dependencies required for dotnet test coverage
+
+#Disabled renovate: datasource=repology depName=debian_11/libxml2 versioning=loose
+ENV LIBXML_VERSION=2.9.10+dfsg-6.7+deb11u3
+
+RUN apt-get update -y && \
+  apt-get install -y --no-install-recommends libxml2=${LIBXML_VERSION} && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
