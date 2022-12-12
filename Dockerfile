@@ -23,7 +23,7 @@ RUN apt-get update -y && \
 # Install Git LFS
 
 # renovate: datasource=github-tags depName=git-lfs/git-lfs extractVersion=^v(?<version>.*)$
-ENV GITLFS_VERSION=3.2.0
+ENV GITLFS_VERSION=3.3.0
 
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash  && \
   apt-get install -y --no-install-recommends git-lfs=${GITLFS_VERSION}  && \
