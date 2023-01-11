@@ -35,7 +35,7 @@ RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.d
 # Install NodeJS
 
 # renovate: datasource=github-tags depName=nodejs/node extractVersion=^v(?<version>.*)$
-ENV NODE_VERSION=16.18.1
+ENV NODE_VERSION=16.19.0
 
 # Install .NET
 
