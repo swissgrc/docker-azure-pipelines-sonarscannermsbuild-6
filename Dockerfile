@@ -1,4 +1,4 @@
-FROM swissgrc/azure-pipelines-openjdk:17.0.4.1
+FROM swissgrc/azure-pipelines-openjdk:17.0.5.0
 
 LABEL org.opencontainers.image.vendor="Swiss GRC AG"
 LABEL org.opencontainers.image.authors="Swiss GRC AG <opensource@swissgrc.com>"
