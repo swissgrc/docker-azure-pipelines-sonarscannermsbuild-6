@@ -53,6 +53,15 @@ jobs:
         with:
           sarif_file: trivy-results.sarif
 
+      # Create Software Bill Of Materials (SBOM) for Docker image
+      - name: Create Software Bill Of Materials (SBOM)
+        uses: SonarSource/gh-action_sbom@v1
+        with:
+          image: ${{ steps.meta.outputs.tags }}
+          filename: bom.json
+          upload-artifact: true
+          upload-release-assets: true
+
       # Login to Docker registry if not PR build
       - name: Log in to Docker Hub
         if: github.event_name != 'pull_request'
