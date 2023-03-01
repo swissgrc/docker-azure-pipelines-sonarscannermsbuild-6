@@ -8,7 +8,7 @@ FROM base AS build
 # Make sure to fail due to an error at any stage in shell pipes
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-#Disabled renovate: datasource=repology depName=debian_11/curl versioning=loose
+# renovate: datasource=repology depName=debian_11/curl versioning=loose
 ENV CURL_VERSION=7.74.0-1.3+deb11u5
 
 RUN apt-get update -y && \
@@ -46,7 +46,7 @@ COPY --from=build /etc/apt/sources.list.d/ /etc/apt/sources.list.d
 
 # Install Git
 
-#Disabled renovate: datasource=repology depName=debian_11_backports/git versioning=loose
+# renovate: datasource=repology depName=debian_11_backports/git versioning=loose
 ENV GIT_VERSION=1:2.39.1-0.1~bpo11+1
 
 RUN echo "deb http://deb.debian.org/debian bullseye-backports main" | tee /etc/apt/sources.list.d/bullseye-backports.list && \
@@ -116,7 +116,7 @@ RUN apt-get update -y && \
 
 # Install Dependencies required for dotnet test coverage
 
-#Disabled renovate: datasource=repology depName=debian_11/libxml2 versioning=loose
+# renovate: datasource=repology depName=debian_11/libxml2 versioning=loose
 ENV LIBXML_VERSION=2.9.10+dfsg-6.7+deb11u3
 
 RUN apt-get update -y && \
