@@ -17,7 +17,7 @@ RUN apt-get update -y && \
   # Add Git LFS PPA
   curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
   # Add NodeJS PPA
-  curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+  curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
   # Add .NET PPA
   curl -o /tmp/packages-microsoft-prod.deb https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb && \
   dpkg -i /tmp/packages-microsoft-prod.deb && \
@@ -76,7 +76,7 @@ RUN apt-get update -y && \
 # Install NodeJS
 
 # renovate: datasource=github-tags depName=nodejs/node extractVersion=^v(?<version>.*)$
-ENV NODE_VERSION=16.19.1
+ENV NODE_VERSION=18.15.0
 
 # Install NodeJS
 
