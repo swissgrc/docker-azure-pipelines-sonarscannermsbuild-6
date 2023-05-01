@@ -117,7 +117,7 @@ RUN apt-get update -y && \
 # Install Dependencies required for dotnet test coverage
 
 # renovate: datasource=repology depName=debian_11/libxml2 versioning=loose
-ENV LIBXML_VERSION=2.9.10+dfsg-6.7+deb11u3
+ENV LIBXML_VERSION=2.9.10+dfsg-6.7+deb11u4
 
 RUN apt-get update -y && \
   apt-get install -y --no-install-recommends libxml2=${LIBXML_VERSION} && \
