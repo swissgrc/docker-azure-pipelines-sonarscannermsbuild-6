@@ -1,5 +1,5 @@
 # Base image containing dependencies used in builder and final image
-FROM ghcr.io/swissgrc/azure-pipelines-openjdk:17.0.6.0 AS base
+FROM ghcr.io/swissgrc/azure-pipelines-openjdk:17.0.7.0 AS base
 
 
 # Builder image
