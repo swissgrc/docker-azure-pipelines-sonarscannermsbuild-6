@@ -107,7 +107,7 @@ ENV \
 
 RUN apt-get update -y && \
   # Install .NET
-  apt-get install -y --no-install-recommends dotnet-sdk-6.0=${DOTNET_VERSION}-1 && \
+  apt-get install -y --no-install-recommends dotnet-sdk-7.0=${DOTNET_VERSION}-1 && \
   # Clean up
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
