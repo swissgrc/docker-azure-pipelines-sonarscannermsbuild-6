@@ -43,7 +43,7 @@ The following example shows the container used for a deployment step which shows
 
 | Tag        | Description                                     | Base Image                                | .NET SDK | NodeJS  | Git                | Git LFS | Size                                                                                                                                         |
 |------------|-------------------------------------------------|-------------------------------------------|----------|---------|--------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| 6-unstable | Latest unstable release (from `develop` branch) | swissgrc/azure-pipelines-openjdk:17.0.7.0 | 6.0.412  | 18.16.1 | 1:2.39.2-1~bpo11+1 | 3.3.0   | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-sonarscannermsbuild/6-unstable?style=flat-square) |
+| 6-unstable | Latest unstable release (from `develop` branch) | swissgrc/azure-pipelines-openjdk:17.0.7.0 | 6.0.412  | 18.17.0 | 1:2.39.2-1~bpo11+1 | 3.3.0   | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-sonarscannermsbuild/6-unstable?style=flat-square) |
 
 ### Configuration
 
@@ -52,7 +52,7 @@ These environment variables are supported:
 | Environment variable   | Default value              | Description                                 |
 |------------------------|----------------------------|---------------------------------------------|
 | DOTNET_VERSION         | `6.0.412`                  | Version of .NET SDK installed in the image. |
-| NODE_VERSION           | `18.16.1-deb-1nodesource1` | Version of Node.js installed in the image.  |
+| NODE_VERSION           | `18.17.0-deb-1nodesource1` | Version of Node.js installed in the image.  |
 | GIT_VERSION            | `1:2.39.2-1~bpo11+1`       | Version of Git installed in the image.      |
 | GITLFS_VERSION         | `3.3.0`                    | Version of Git LFS installed in the image.  |
 
