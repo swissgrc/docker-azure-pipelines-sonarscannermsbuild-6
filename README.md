@@ -54,7 +54,7 @@ These environment variables are supported:
 | DOTNET_VERSION         | `6.0.412`                  | Version of .NET SDK installed in the image. |
 | NODE_VERSION           | `18.17.0-deb-1nodesource1` | Version of Node.js installed in the image.  |
 | GIT_VERSION            | `1:2.39.2-1~bpo11+1`       | Version of Git installed in the image.      |
-| GITLFS_VERSION         | `3.3.0`                    | Version of Git LFS installed in the image.  |
+| GITLFS_VERSION         | `3.4.0`                    | Version of Git LFS installed in the image.  |
 
 [Sonar Scanner for .NET]: https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-msbuild/
 [Azure Pipelines container jobs]: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases
