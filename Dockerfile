@@ -17,7 +17,9 @@ RUN apt-get update -y && \
   # Add Git LFS PPA
   curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
   # Add NodeJS PPA
-  curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+  curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
+  NODE_MAJOR=18 && \
+  echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list && \
   # Add .NET PPA
   curl -o /tmp/packages-microsoft-prod.deb https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb && \
   dpkg -i /tmp/packages-microsoft-prod.deb && \
@@ -36,12 +38,12 @@ LABEL org.opencontainers.image.documentation="https://github.com/swissgrc/docker
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 WORKDIR /
-# Copy NodeJS PPA keyring
-COPY --from=build /usr/share/keyrings/ /usr/share/keyrings 
-# Copy Git LFS PPA keyring
+# Copy Git LFS & NodeJS PPA keyring
 COPY --from=build /etc/apt/keyrings/ /etc/apt/keyrings
 # Copy .NET keyring
+COPY --from=build /usr/share/keyrings/ /usr/share/keyrings
 COPY --from=build /etc/apt/trusted.gpg.d/ /etc/apt/trusted.gpg.d
+# Copy sources
 COPY --from=build /etc/apt/sources.list.d/ /etc/apt/sources.list.d
 
 # Install Git
@@ -81,7 +83,7 @@ ENV NODE_VERSION=18.17.1
 
 RUN apt-get update -y && \
   # Install NodeJs
-  apt-get install -y --no-install-recommends nodejs=${NODE_VERSION}-deb-1nodesource1 && \
+  apt-get install -y --no-install-recommends nodejs=${NODE_VERSION}-1nodesource1 && \
   # Clean up
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
