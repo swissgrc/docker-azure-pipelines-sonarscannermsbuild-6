@@ -8,8 +8,8 @@ FROM base AS build
 # Make sure to fail due to an error at any stage in shell pipes
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# renovate: datasource=repology depName=debian_11/curl versioning=loose
-ENV CURL_VERSION=7.74.0-1.3+deb11u7
+# renovate: datasource=repology depName=debian_12/curl versioning=loose
+ENV CURL_VERSION=7.88.1-10+deb12u1
 
 RUN apt-get update -y && \
   # Install necessary dependencies
@@ -19,7 +19,7 @@ RUN apt-get update -y && \
   # Add NodeJS PPA
   curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
   # Add .NET PPA
-  curl -o /tmp/packages-microsoft-prod.deb https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb && \
+  curl -o /tmp/packages-microsoft-prod.deb https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb && \
   dpkg -i /tmp/packages-microsoft-prod.deb && \
   rm -rf /tmp/*
 
@@ -46,13 +46,12 @@ COPY --from=build /etc/apt/sources.list.d/ /etc/apt/sources.list.d
 
 # Install Git
 
-# renovate: datasource=repology depName=debian_11_backports/git versioning=loose
-ENV GIT_VERSION=1:2.39.2-1~bpo11+1
+# renovate: datasource=repology depName=debian_12/git versioning=loose
+ENV GIT_VERSION=1:2.39.2-1.1
 
-RUN echo "deb https://deb.debian.org/debian bullseye-backports main" | tee /etc/apt/sources.list.d/bullseye-backports.list && \
-  apt-get update -y && \
+RUN apt-get update -y && \
   # Install Git
-  apt-get install -y --no-install-recommends -t bullseye-backports git=${GIT_VERSION} && \
+  apt-get install -y --no-install-recommends git=${GIT_VERSION} && \
   # Clean up
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
@@ -116,8 +115,8 @@ RUN apt-get update -y && \
 
 # Install Dependencies required for dotnet test coverage
 
-# renovate: datasource=repology depName=debian_11/libxml2 versioning=loose
-ENV LIBXML_VERSION=2.9.10+dfsg-6.7+deb11u4
+# renovate: datasource=repology depName=debian_12/libxml2 versioning=loose
+ENV LIBXML_VERSION=2.9.14+dfsg-1.3~deb12u1
 
 RUN apt-get update -y && \
   apt-get install -y --no-install-recommends libxml2=${LIBXML_VERSION} && \
