@@ -52,7 +52,7 @@ These environment variables are supported:
 | Environment variable   | Default value              | Description                                 |
 |------------------------|----------------------------|---------------------------------------------|
 | DOTNET_VERSION         | `6.0.414`                  | Version of .NET SDK installed in the image. |
-| NODE_VERSION           | `18.17.1-deb-1nodesource1` | Version of Node.js installed in the image.  |
+| NODE_VERSION           | `18.18.0-deb-1nodesource1` | Version of Node.js installed in the image.  |
 | GIT_VERSION            | `1:2.39.2-1.1`             | Version of Git installed in the image.      |
 | GITLFS_VERSION         | `3.4.0`                    | Version of Git LFS installed in the image.  |
 
