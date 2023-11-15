@@ -43,7 +43,7 @@ The following example shows the container used for a deployment step which shows
 
 | Tag        | Description                                     | Base Image                                | .NET SDK | NodeJS  | Git          | Git LFS | Size                                                                                                                                         |
 |------------|-------------------------------------------------|-------------------------------------------|----------|---------|--------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| 6-unstable | Latest unstable release (from `develop` branch) | swissgrc/azure-pipelines-openjdk:17.0.8.1 | 6.0.417  | 18.18.2 | 1:2.39.2-1.1 | 3.3.0   | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-sonarscannermsbuild/6-unstable?style=flat-square) |
+| 6-unstable | Latest unstable release (from `develop` branch) | swissgrc/azure-pipelines-openjdk:17.0.9.0 | 6.0.417  | 18.18.2 | 1:2.39.2-1.1 | 3.3.0   | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-sonarscannermsbuild/6-unstable?style=flat-square) |
 
 ### Configuration
 
