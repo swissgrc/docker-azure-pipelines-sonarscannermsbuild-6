@@ -43,7 +43,7 @@ The following example shows the container used for a deployment step which shows
 
 | Tag        | Description                                     | Base Image                                | .NET SDK | NodeJS  | Git          | Git LFS | Size                                                                                                                                         |
 |------------|-------------------------------------------------|-------------------------------------------|----------|---------|--------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| 6-unstable | Latest unstable release (from `develop` branch) | swissgrc/azure-pipelines-openjdk:17.0.9.0 | 6.0.417  | 18.19.0 | 1:2.39.2-1.1 | 3.3.0   | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-sonarscannermsbuild/6-unstable?style=flat-square) |
+| 6-unstable | Latest unstable release (from `develop` branch) | swissgrc/azure-pipelines-openjdk:17.0.9.0 | 6.0.417  | 18.19.0 | 1:2.39.2-1.1 | 3.4.1   | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-sonarscannermsbuild/6-unstable?style=flat-square) |
 
 ### Configuration
 
@@ -54,7 +54,7 @@ These environment variables are supported:
 | DOTNET_VERSION         | `6.0.417`                  | Version of .NET SDK installed in the image. |
 | NODE_VERSION           | `18.19.0-1nodesource1`     | Version of Node.js installed in the image.  |
 | GIT_VERSION            | `1:2.39.2-1.1`             | Version of Git installed in the image.      |
-| GITLFS_VERSION         | `3.4.0`                    | Version of Git LFS installed in the image.  |
+| GITLFS_VERSION         | `3.4.1`                    | Version of Git LFS installed in the image.  |
 
 [Sonar Scanner for .NET]: https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-msbuild/
 [Azure Pipelines container jobs]: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases
