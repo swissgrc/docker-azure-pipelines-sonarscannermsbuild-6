@@ -93,7 +93,7 @@ RUN apt-get update -y && \
 # Install .NET
 
 # renovate: datasource=github-tags depName=dotnet/sdk extractVersion=^v(?<version>.*)$
-ENV DOTNET_VERSION=6.0.422
+ENV DOTNET_VERSION=6.0.423
 
 ENV \
     # Do not show first run text
