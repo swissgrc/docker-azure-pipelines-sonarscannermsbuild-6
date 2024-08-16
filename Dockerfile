@@ -22,10 +22,11 @@ RUN apt-get update -y && \
     | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
   NODE_MAJOR=20 && \
   echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" \
-    | tee /etc/apt/sources.list.d/nodesource.list && \
-  # Add .NET PPA
-  curl --proto "=https" -o /tmp/packages-microsoft-prod.deb https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb && \
-  dpkg -i /tmp/packages-microsoft-prod.deb && \
+    | tee /etc/apt/sources.list.d/nodesource.list
+
+# Add .NET PPA
+ADD https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb /tmp/packages-microsoft-prod.deb 
+RUN dpkg -i /tmp/packages-microsoft-prod.deb && \
   rm -rf /tmp/*
 
 
