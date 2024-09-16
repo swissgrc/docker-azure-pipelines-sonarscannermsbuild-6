@@ -41,9 +41,9 @@ The following example shows the container used for a deployment step which shows
 
 ### Tags
 
-| Tag        | Description                                     | Base Image                                 | .NET SDK | NodeJS  | Git          | Git LFS | Size                                                                                                                                         |
-|------------|-------------------------------------------------|--------------------------------------------|----------|---------|--------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| 6-unstable | Latest unstable release (from `develop` branch) | swissgrc/azure-pipelines-openjdk:17.0.12.0 | 6.0.425  | 20.17.0 | 1:2.39.2-1.1 | 3.5.1   | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-sonarscannermsbuild/6-unstable?style=flat-square) |
+| Tag        | Description                                     | Base Image                                 | .NET SDK | NodeJS  | Git              | Git LFS | Size                                                                                                                                         |
+|------------|-------------------------------------------------|--------------------------------------------|----------|---------|------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| 6-unstable | Latest unstable release (from `develop` branch) | swissgrc/azure-pipelines-openjdk:17.0.12.0 | 6.0.425  | 20.17.0 | 2.39.5-0+deb12u1 | 3.5.1   | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-sonarscannermsbuild/6-unstable?style=flat-square) |
 
 ### Configuration
 
@@ -53,7 +53,7 @@ These environment variables are supported:
 |------------------------|----------------------------|---------------------------------------------|
 | DOTNET_VERSION         | `6.0.424`                  | Version of .NET SDK installed in the image. |
 | NODE_VERSION           | `20.17.0-1nodesource1`     | Version of Node.js installed in the image.  |
-| GIT_VERSION            | `1:2.39.2-1.1`             | Version of Git installed in the image.      |
+| GIT_VERSION            | `2.39.5-0+deb12u1`         | Version of Git installed in the image.      |
 | GITLFS_VERSION         | `3.5.1`                    | Version of Git LFS installed in the image.  |
 
 [Sonar Scanner for .NET]: https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-msbuild/
